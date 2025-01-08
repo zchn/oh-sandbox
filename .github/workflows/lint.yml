@@ -28,4 +28,4 @@ jobs:
     - name: Run ESLint
       run: |
         cd todo-app
-        npx eslint . --ext .js,.jsx
+        npx eslint "**/*.{js,jsx}"
