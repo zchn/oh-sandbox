@@ -30,7 +30,7 @@ function App() {
     <div className="app">
       <h1>Todo List</h1>
       
-      <form onSubmit={addTodo} className="todo-form">
+      <form onSubmit={handleSubmit} className="todo-form">
         <div className="input-group">
           <input
             type="text"
