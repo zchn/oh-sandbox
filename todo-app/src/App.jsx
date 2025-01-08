@@ -31,16 +31,15 @@ function App() {
   }, [])
 
   useEffect(() => {
-    console.log('[localStorage.setItem]', {
-      key: 'todos',
-      value: todos,
-      stringifiedValue: JSON.stringify(todos),
-      todosCount: todos.length,
-      completedCount: todos.filter(t => t.completed).length,
-      timestamp: new Date().toISOString()
-    })
-    
     if (todos.length > 0) {
+      console.log('[localStorage.setItem]', {
+        key: 'todos',
+        value: todos,
+        stringifiedValue: JSON.stringify(todos),
+        todosCount: todos.length,
+        completedCount: todos.filter(t => t.completed).length,
+        timestamp: new Date().toISOString()
+      })
       localStorage.setItem('todos', JSON.stringify(todos))
     }
   }, [todos])
