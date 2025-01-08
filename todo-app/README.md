@@ -41,8 +41,28 @@ npm run dev
 
 The app will be available at `http://localhost:5173` (or another port if 5173 is already in use).
 
+### Running Tests
+
+The app includes a comprehensive test suite using Vitest and React Testing Library. To run the tests:
+
+```bash
+# Run tests in watch mode (development)
+npm test
+
+# Run tests with coverage report
+npm test:coverage
+```
+
+The test suite includes:
+- Component tests for the main App
+- Custom hook tests for useTodos
+- Integration tests for localStorage functionality
+
 ## Built With
 
 - [React](https://react.dev/) - The web framework used
 - [Vite](https://vitejs.dev/) - Build tool and development server
 - localStorage - For data persistence
+- [Vitest](https://vitest.dev/) - Testing framework
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) - React component testing
+- [Jest DOM](https://github.com/testing-library/jest-dom) - DOM testing utilities
