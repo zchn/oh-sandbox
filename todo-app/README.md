@@ -4,9 +4,10 @@ A simple, modern todo list application built with React and Vite. This app allow
 
 ## Features
 
-- Add new todos
+- Add new todos with optional due dates
 - Mark todos as complete/incomplete
 - Delete todos
+- Due date tracking with overdue status
 - Persistent storage using localStorage (your todos remain saved even after closing the browser)
 - Clean, modern UI with proper styling
 - Responsive design
