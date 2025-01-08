@@ -37,9 +37,13 @@ function App() {
       stringifiedValue: JSON.stringify(todos),
       todosCount: todos.length,
       completedCount: todos.filter(t => t.completed).length,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
+      skipped: todos.length === 0
     })
-    localStorage.setItem('todos', JSON.stringify(todos))
+    
+    if (todos.length > 0) {
+      localStorage.setItem('todos', JSON.stringify(todos))
+    }
   }, [todos])
 
   const [dueDate, setDueDate] = useState('')
