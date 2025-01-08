@@ -1,0 +1,47 @@
+# Todo App
+
+A simple, modern todo list application built with React and Vite. This app allows you to manage your tasks with a clean and intuitive interface.
+
+## Features
+
+- Add new todos
+- Mark todos as complete/incomplete
+- Delete todos
+- Persistent storage using localStorage (your todos remain saved even after closing the browser)
+- Clean, modern UI with proper styling
+- Responsive design
+- Accessibility features (focus states, semantic HTML)
+
+## Getting Started
+
+### Prerequisites
+
+Make sure you have [Node.js](https://nodejs.org/) installed on your system.
+
+### Installation
+
+1. Clone the repository
+2. Navigate to the project directory:
+   ```bash
+   cd todo-app
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the App
+
+To start the development server:
+
+```bash
+npm run dev
+```
+
+The app will be available at `http://localhost:5173` (or another port if 5173 is already in use).
+
+## Built With
+
+- [React](https://react.dev/) - The web framework used
+- [Vite](https://vitejs.dev/) - Build tool and development server
+- localStorage - For data persistence
