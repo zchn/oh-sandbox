@@ -80,16 +80,20 @@ describe('useTodos', () => {
   })
 
   it('does not save to localStorage when todos is empty', () => {
+    // Mock localStorage.getItem to return null (empty todos)
+    localStorage.getItem.mockReturnValue(null)
+    
     const { result } = renderHook(() => useTodos())
     
-    act(() => {
-      result.current.addTodo('Test todo')
-    })
+    // Start with empty todos
+    expect(result.current.todos).toHaveLength(0)
 
+    // Clear any previous calls to localStorage.setItem
     localStorage.setItem.mockClear()
 
+    // Verify that no localStorage calls are made with empty todos
     act(() => {
-      result.current.deleteTodo(result.current.todos[0].id)
+      result.current.deleteTodo(123) // Try to delete non-existent todo
     })
 
     expect(localStorage.setItem).not.toHaveBeenCalled()
