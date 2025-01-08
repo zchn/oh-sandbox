@@ -19,12 +19,26 @@ function App() {
 
   useEffect(() => {
     const savedTodos = localStorage.getItem('todos')
+    console.log('[localStorage.getItem]', {
+      key: 'todos',
+      rawValue: savedTodos,
+      parsedValue: savedTodos ? JSON.parse(savedTodos) : null,
+      timestamp: new Date().toISOString()
+    })
     if (savedTodos) {
       setTodos(JSON.parse(savedTodos))
     }
   }, [])
 
   useEffect(() => {
+    console.log('[localStorage.setItem]', {
+      key: 'todos',
+      value: todos,
+      stringifiedValue: JSON.stringify(todos),
+      todosCount: todos.length,
+      completedCount: todos.filter(t => t.completed).length,
+      timestamp: new Date().toISOString()
+    })
     localStorage.setItem('todos', JSON.stringify(todos))
   }, [todos])
 
