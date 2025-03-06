@@ -1,0 +1,68 @@
+Metadata-Version: 2.2
+Name: imap_to_mongo
+Version: 0.1.0
+Summary: A package to fetch emails from IMAP server and store them in MongoDB
+Author: OpenHands
+Author-email: openhands@all-hands.dev
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: pymongo>=4.0.0
+Requires-Dist: imaplib2>=3.6
+Requires-Dist: dnspython>=2.0.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# IMAP to MongoDB
+
+A Python package to fetch emails from an IMAP server and store them in MongoDB.
+
+## Features
+
+- Stream emails from an IMAP server in real-time
+- Store emails in MongoDB for persistence
+- Resume capability to continue from where it left off
+- Support for various email formats and attachments
+
+## Installation
+
+```bash
+pip install imap-to-mongo
+```
+
+## Usage
+
+```python
+from imap_to_mongo import ImapFetcher
+
+# Configure the fetcher
+fetcher = ImapFetcher(
+    imap_host="imap.example.com",
+    imap_port=993,
+    imap_user="your_email@example.com",
+    imap_password="your_password",
+    mongo_uri="mongodb://localhost:27017/",
+    mongo_db="email_db",
+    mongo_collection="emails"
+)
+
+# Start fetching emails
+fetcher.start()
+
+# To stop fetching
+fetcher.stop()
+```
+
+See the `example` directory for more detailed usage examples.
+
+## License
+
+MIT

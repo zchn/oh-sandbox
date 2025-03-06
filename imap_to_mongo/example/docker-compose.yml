@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - imap_mongo_network
+
+  imap-fetcher:
+    build:
+      context: ..
+      dockerfile: example/Dockerfile
+    container_name: imap-fetcher
+    depends_on:
+      - mongo
+    environment:
+      - IMAP_HOST=${IMAP_HOST:-imap.example.com}
+      - IMAP_PORT=${IMAP_PORT:-993}
+      - IMAP_USER=${IMAP_USER:-user@example.com}
+      - IMAP_PASSWORD=${IMAP_PASSWORD:-password}
+      - IMAP_MAILBOX=${IMAP_MAILBOX:-INBOX}
+      - MONGO_URI=mongodb://mongo:27017/
+      - MONGO_DB=${MONGO_DB:-email_db}
+      - MONGO_COLLECTION=${MONGO_COLLECTION:-emails}
+    networks:
+      - imap_mongo_network
+    restart: unless-stopped
+
+networks:
+  imap_mongo_network:
+    driver: bridge
+
+volumes:
+  mongo_data:
