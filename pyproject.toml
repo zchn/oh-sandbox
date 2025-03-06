@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "mail_to_mongo"
+version = "0.1.0"
+description = "A Python package to fetch mail from POP3 server and store in MongoDB"
+authors = ["openhands <openhands@all-hands.dev>"]
+readme = "README.md"
+packages = [{include = "mail_to_mongo"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pymongo = "^4.6.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+pytest-mock = "^3.12.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
