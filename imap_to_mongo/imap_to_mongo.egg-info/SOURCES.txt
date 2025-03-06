@@ -1,0 +1,10 @@
+README.md
+setup.py
+imap_to_mongo/__init__.py
+imap_to_mongo/db.py
+imap_to_mongo/fetcher.py
+imap_to_mongo.egg-info/PKG-INFO
+imap_to_mongo.egg-info/SOURCES.txt
+imap_to_mongo.egg-info/dependency_links.txt
+imap_to_mongo.egg-info/requires.txt
+imap_to_mongo.egg-info/top_level.txt
